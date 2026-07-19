@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "vitest": {
+      "command": "npx",
+      "args": ["-y", "@djankies/vitest-mcp"]
+    },
+    "camoufox-browser": {
+      "command": "python3",
+      "args": ["/home/codespace/.claude/mcp-servers/camoufox-browser-mcp/src/mcp_server.py"],
+      "env": {
+        "SCREENSHOT_PATH": "/tmp/camoufox-screenshots",
+        "PYTHONPATH": "/home/codespace/.claude/mcp-servers/camoufox-browser-mcp/src"
+      }
+    }
+  }
+}

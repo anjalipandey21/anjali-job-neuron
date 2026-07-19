@@ -1,0 +1,183 @@
+/* ── Skip link ── */
+.skipLink {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 9999;
+  padding: 8px 16px;
+  background: var(--bg-surface-2);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+
+.skipLink:focus {
+  top: var(--space-3);
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-page-gradient);
+}
+
+.main {
+  flex: 1;
+  overflow: auto;
+  padding-top: var(--nav-height);
+}
+
+/* Mobile: no top nav (TopNav hidden via CSS), add bottom nav space */
+@media (max-width: 480px) {
+  .main {
+    padding-top: 0;
+    padding-bottom: 64px;
+  }
+}
+
+/* ── WelcomeModal ── */
+.welcomeOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  animation: modalIn 0.3s ease;
+}
+
+.welcomeModal {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--btn-primary-bg);
+  border-radius: 12px;
+  padding: 32px 28px;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+}
+
+.welcomeHeader {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.welcomeEyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 6px;
+}
+
+.welcomeTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.welcomeSub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.step {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 14px;
+  text-align: center;
+}
+
+.stepIcon {
+  color: var(--btn-primary-bg);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.stepTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.stepNum {
+  font-size: 11px;
+  color: var(--accent-text);
+  margin-right: 4px;
+}
+
+.stepDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.welcomeActions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.welcomeBtnGhost {
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  transition: background var(--transition-fast);
+}
+
+.welcomeBtnGhost:hover {
+  background: var(--bg-surface-3);
+}
+
+.welcomeBtnPrimary {
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  transition: filter var(--transition-fast);
+}
+
+.welcomeBtnPrimary:hover {
+  filter: brightness(1.15);
+}
+
+.layoutCentered {
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingText {
+  color: var(--text-muted);
+  font-size: 14px;
+}

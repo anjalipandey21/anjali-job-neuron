@@ -1,0 +1,910 @@
+.page {
+  animation: fadeInUp 0.3s ease both;
+}
+
+/* ── Page header ── */
+.header {
+  padding: 28px 32px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.headerText {
+  flex: 1;
+  min-width: 0;
+}
+
+.headerEyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin: 0 0 4px;
+}
+
+.headerTitle {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 4px;
+}
+
+.headerSub {
+  font-size: var(--text-sm);
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* ── Content ── */
+.content {
+  padding: 2rem;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 16px 16px;
+  }
+  .content {
+    padding: 0.75rem;
+  }
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--bg-surface-3);
+  border-color: var(--accent-border);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnSm {
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+.btnSm2 {
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: var(--btn-primary-text);
+  border: none;
+  font-size: var(--text-sm);
+  font-family: inherit;
+  cursor: pointer;
+  transition: filter var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+
+.btnPrimary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btnPrimary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnDanger {
+  color: var(--text-error);
+}
+
+.btnLink {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btnLink:hover {
+  background: var(--bg-surface-3);
+  border-color: var(--accent-border);
+}
+
+.btnLink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btnIconOnly {
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* ── Pipeline counters ── */
+.pipelineGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .pipelineGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pipelineCard {
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+}
+
+.pipelineLabel {
+  font-size: 12px;
+  margin: 0 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pipelineCount {
+  font-size: 26px;
+  font-weight: 500;
+  font-family: monospace;
+  margin: 0;
+}
+
+/* ── Empty state ── */
+.emptyState {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  text-align: center;
+}
+
+.emptyText {
+  color: var(--text-light);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ── App card ── */
+.appCard {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 12px;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.appCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-surface-3);
+}
+
+.appCardInner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.companyAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--bg-metric);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.appBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.appTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.appTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.appMeta {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin: 0 0 8px;
+}
+
+.appNotes {
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 4px;
+}
+
+/* ── Notes textarea ── */
+.notesTextarea {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  padding: 8px 10px;
+  height: 56px;
+  resize: none;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast);
+}
+
+.notesTextarea:focus {
+  outline: none;
+  border-color: var(--accent-border);
+}
+
+.notesTextarea::placeholder {
+  color: var(--text-faint);
+}
+
+.notesBtns {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* ── Desktop action column ── */
+.actionCol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.actionRow {
+  display: flex;
+  gap: 4px;
+}
+
+/* ── Status select ── */
+.statusSelect {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.statusSelect:focus {
+  outline: none;
+  border-color: var(--accent-border);
+}
+
+/* ── Overflow menu (mobile) ── */
+.overflowWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.overflowMenu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 10;
+  min-width: 180px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 8px;
+}
+
+.overflowItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  margin-bottom: 2px;
+}
+
+.overflowItem:hover {
+  background: var(--bg-surface-3);
+}
+
+.overflowItem:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.overflowItemDanger {
+  color: var(--text-error);
+}
+
+.overflowItemLink {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-size: 12px;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  margin-bottom: 2px;
+}
+
+.overflowItemLink:hover {
+  background: var(--bg-surface-3);
+}
+
+.overflowSelect {
+  width: 100%;
+  margin-bottom: 6px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 5px 8px;
+}
+
+.overflowSelect:focus {
+  outline: none;
+  border-color: var(--accent-border);
+}
+
+/* ── Modal overlay ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-overlay);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  width: 90%;
+  max-width: 540px;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: modalIn 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalLg {
+  max-width: 640px;
+  gap: 1rem;
+  padding: 20px;
+}
+
+.modalSheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 16px 16px 0 0;
+  z-index: 1001;
+  animation: sheetIn 0.28s cubic-bezier(0.32, 0.72, 0, 1) both;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  padding: 1.25rem 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.modalHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.modalSub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 3px 0 0;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-faint);
+  padding: 0;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.modalClose:hover {
+  color: var(--text-main);
+}
+
+.modalClose:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.modalBody {
+  flex: 1;
+  overflow: auto;
+  padding: 0.75rem 1.25rem;
+}
+
+.modalFooter {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+
+/* ── Task list ── */
+.taskEmpty {
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+  text-align: center;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.taskRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+}
+
+.taskCheckbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.taskCheck {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.taskCheckIncomplete {
+  border: 1.5px solid var(--border);
+  background: transparent;
+}
+
+.taskCheckComplete {
+  border: none;
+  background: var(--accent);
+}
+
+.taskCheckMark {
+  color: var(--btn-primary-text);
+  font-size: 10px;
+  line-height: 1;
+}
+
+.taskInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.taskTitle {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin: 0;
+}
+
+.taskTitleDone {
+  text-decoration: line-through;
+  color: var(--text-faint);
+}
+
+.taskTitleOverdue {
+  color: var(--text-error);
+}
+
+.taskNotes {
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 2px 0 0;
+}
+
+.taskDueBadge {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.taskDueNormal {
+  background: var(--bg-metric);
+  color: var(--text-light);
+}
+
+.taskDueOverdue {
+  background: var(--badge-rej-bg);
+  color: var(--badge-rej-text);
+}
+
+.taskRemove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-faint);
+  font-size: 14px;
+  padding: 2px 4px;
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.taskRemove:hover {
+  color: var(--text-error);
+}
+
+/* ── Add task form ── */
+.addTaskForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formInput {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  padding: 8px 10px;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--accent-border);
+}
+
+.formInput::placeholder {
+  color: var(--text-faint);
+}
+
+.formLabel {
+  font-size: 11px;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.formActions {
+  display: flex;
+  gap: 6px;
+}
+
+/* ── Quick add presets ── */
+.presetsSection {
+  margin-top: 12px;
+}
+
+.presetsLabel {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin: 0 0 6px;
+}
+
+.presetsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* ── Activity modal ── */
+.timeline {
+  position: relative;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.timelineDot {
+  position: absolute;
+  left: -21px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timelineEntry {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.timelineRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.timelineBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.timelineTypeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.timelineType {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.timelineDate {
+  font-size: 11px;
+  color: var(--text-light);
+  flex-shrink: 0;
+}
+
+.timelineNote {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 2px 0 0;
+}
+
+.activityEmpty {
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+  text-align: center;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.activityFooter {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── App customize modal ── */
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.sectionLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.preBlock {
+  background: var(--bg-surface-3);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  color: var(--text-main);
+}
+
+.highlightList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.highlightItem {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  background: var(--bg-surface-3);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+}
+
+.highlightNum {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  font-family: monospace;
+  margin-top: 1px;
+}
+
+.highlightText {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.modalLoading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.modalError {
+  color: var(--text-error);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+.dragHandle {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 4px;
+}
+
+.dragHandleBar {
+  width: 32px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+/* ── Add Job modal form ── */
+.addJobForm {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addJobActions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* ── Utility ── */
+.dateInputAuto {
+  width: auto;
+}
+
+.addTaskBtnWrap {
+  margin-top: 12px;
+}
+
+.activityOverlay {
+  padding: 20px;
+}
+
+.activityModal {
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+}
+
+.logBtnAlignStart {
+  align-self: flex-start;
+}
+
+.customizeActionsRow {
+  display: flex;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.overflowBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+}

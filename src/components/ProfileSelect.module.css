@@ -1,0 +1,289 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg-page-gradient);
+  padding: var(--space-5);
+}
+
+.container {
+  max-width: 480px;
+  width: 100%;
+  animation: fadeInUp 0.3s ease;
+}
+
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.brandIcon {
+  width: 34px;
+  height: 34px;
+  background: var(--btn-primary-bg);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.35);
+  flex-shrink: 0;
+}
+
+.brandTitle {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.brandSub {
+  font-size: var(--text-xs);
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.profileList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.profileCard {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background var(--transition-base), border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.profileCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,92,246,0.6), transparent);
+  pointer-events: none;
+}
+
+.profileCard:hover {
+  background: var(--bg-surface-3);
+  border-color: var(--accent-border);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.profileCard:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.profileLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--badge-new-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--badge-new-text);
+  flex-shrink: 0;
+}
+
+.profileName {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.profileMeta {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin: 2px 0 0;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  font-size: 16px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover {
+  color: var(--text-error);
+  background: var(--bg-error);
+}
+
+.createBtn {
+  width: 100%;
+  padding: var(--space-3) 0;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+}
+
+.createBtn:hover {
+  background: var(--bg-surface-2);
+  border-color: var(--accent-border);
+  color: var(--text-main);
+}
+
+.createBtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.createForm {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+
+.createForm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,92,246,0.6), transparent);
+  pointer-events: none;
+}
+
+.createTitle {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.input {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  background: var(--input-bg);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: var(--text-base);
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--accent-border);
+}
+
+.input::placeholder {
+  color: var(--text-faint);
+}
+
+.formActions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.btnPrimary {
+  padding: var(--space-2) var(--space-4);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: filter var(--transition-base);
+}
+
+.btnPrimary:hover { filter: brightness(1.15); }
+.btnPrimary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.btnGhost {
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background var(--transition-base);
+}
+
+.btnGhost:hover { background: var(--bg-surface-3); }
+.btnGhost:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.signOut {
+  margin-top: var(--space-6);
+  color: var(--text-error);
+  border-color: var(--border-error);
+}
+
+.signOut:hover { background: var(--bg-error) !important; }
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--bg-page-gradient);
+}
+
+.loadingText {
+  color: var(--text-muted);
+  font-size: 14px;
+}

@@ -1,0 +1,87 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg-page-gradient);
+  padding: var(--space-5);
+}
+
+.loginCard {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-8);
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.4s ease;
+}
+
+.subtext {
+  color: var(--text-muted);
+  font-size: var(--text-base);
+  margin: var(--space-2) 0 var(--space-8);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.btnPrimary {
+  width: 100%;
+  padding: 12px 0;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: filter var(--transition-base);
+}
+
+.btnPrimary:hover {
+  filter: brightness(1.15);
+}
+
+.btnPrimary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btnSecondary {
+  width: 100%;
+  padding: 12px 0;
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: var(--space-2);
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.btnSecondary:hover {
+  background: var(--bg-surface-3);
+  border-color: var(--accent-border);
+}
+
+.btnSecondary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.inviteNote {
+  color: var(--text-light);
+  font-size: var(--text-xs);
+  margin-top: var(--space-5);
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# Environment variables (secrets)
+.env
+.env.local
+
+# Auth state for Playwright design reviews (contains session tokens)
+playwright-auth.json
+
+# Claude Code
+.claude/settings.json
+
+# Superpowers / local tooling
+.superpowers/
+.playwright-mcp/
+.worktrees/
+server.pid
+
+# Netlify local cache
+.netlify/
+
+# Design review screenshots and reports (binary files)
+docs/reviews/
+*.png
+
+# Deno (not used in this project)
+deno.lock
+
+# Personal / local-only folders
+Relationship/
+
+# Git worktrees
+.worktrees/

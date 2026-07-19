@@ -1,0 +1,34 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+  functions = "netlify/functions"
+
+[dev]
+  command     = "vite"
+  port        = 9000
+  targetPort  = 5173
+  functions   = "netlify/functions"
+  autoLaunch  = false
+
+# SPA fallback — must be last
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+[functions]
+  node_bundler = "esbuild"
+
+# Increase timeout for all functions (max 26s on free tier)
+[functions."*"]
+  timeout = 26
+
+# Scheduled background function — runs every 6 hours; timeout overrides the wildcard 26s cap
+[functions."scheduled-job-search-background"]
+  schedule = "0 */6 * * *"
+  timeout  = 900
+
+# Daily job expiry checker — re-checks stored job URLs older than 14 days
+[functions."check-job-expiry-background"]
+  schedule = "0 4 * * *"
+  timeout  = 900

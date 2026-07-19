@@ -1,0 +1,71 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  z-index: 100;
+  display: flex;
+  border-top: 0.5px solid var(--border-light);
+  background: var(--bg-bottom-nav);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 4px 0;
+  color: var(--text-muted);
+  border-top: 2px solid transparent;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.tabActive {
+  color: var(--accent);
+  border-top-color: var(--accent);
+}
+
+.tabIcon {
+  display: flex;
+  font-size: 16px;
+  position: relative;
+}
+
+.tabLabel {
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.tabLabelActive {
+  font-weight: 600;
+}
+
+.tabBadge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 0 3px;
+  border-radius: var(--radius-full);
+  background: var(--badge-cust-bg);
+  color: var(--badge-cust-text);
+  min-width: 14px;
+  text-align: center;
+}
